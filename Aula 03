@@ -1,0 +1,47 @@
+fluxo completo de criação e hospedagem de uma página web simples em um ambiente Linux.
+
+1. Navegação e Preparação
+
+hostname: Confirma o nome do servidor (ubuntu).
+
+pwd: Exibe o diretório atual (/root, a pasta pessoal do administrador).
+
+mkdir aula3: Cria uma nova pasta chamada aula3.
+
+cd aula3: Entra no diretório recém-criado (~/aula3).
+
+2. Criação do Arquivo HTML e Erro de Sintaxe
+
+echo "<h1>Computacao em Nuvem</h1>"> index.html: Cria o arquivo index.html (o símbolo > substitui/cria o arquivo) gravando a tag de cabeçalho HTML.
+
+echo"<p>Meu primeiro servico web remoto!</p>">> index.html: Faltou um espaço depois do echo, mas o erro principal foi o ponto de exclamação !.
+
+bash: !: event not found: O terminal tentou interpretar o ! como um atalho do histórico do Bash. Por isso, a linha falhou e não foi gravada no arquivo.
+
+cat index.html: Le o conteúdo do arquivo, confirmando que apenas o <h1> havia sido salvo.
+
+^C: Representa a tecla Ctrl + C pressionada para cancelar o comando ou limpar a linha de digitação.
+
+3. Correção do Arquivo
+
+echo "<p>Meu primeiro servico web remoto</p>">> index.html: Adiciona o parágrafo sem o ponto de exclamação. O operador >> acrescenta o texto ao final do arquivo sem apagar o que já existia.
+
+cat index.html: Confirma que o arquivo agora possui as duas linhas corretas.
+
+4. Execução do Servidor e Requisição
+
+python3 -m http.server 8080: Inicia um servidor HTTP embutido do Python na porta 8080, disponibilizando os arquivos da pasta atual para a rede.
+
+127.0.0.1 - - [...] "GET / HTTP/1.1" 200 -: Registra que um cliente (navegador ou terminal) acessou a raiz do site. O código 200 indica sucesso.
+
+^C: Encerra a execução do servidor Python.
+
+5. Atualização da Página e Novo Acesso
+
+echo "<p>Aluno: IGOR</p>">> index.html: Adiciona mais uma linha com o nome do aluno ao final do arquivo.
+
+echo "<p>AUlA 3 - Modelos de Implantacao</p>">> index.html: Adiciona a identificação da aula ao final do arquivo.
+
+python3 -m http.server 8080: Sobe novamente o servidor web na porta 8080.
+
+curl localhost:8080: Requisição feita (em outro terminal ou aba) para testar o site localmente, gerando outro log 200 de sucesso.
