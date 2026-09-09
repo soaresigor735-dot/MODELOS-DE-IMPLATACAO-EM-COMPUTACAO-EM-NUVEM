@@ -1,0 +1,14 @@
+1 - Qual é o nome do hostname do servidor ?
+R: Ubutu
+
+02 - Qual endereço IP apareceu?
+R: 127.0.0.1
+
+03 - Onde está o arquivo index.html?
+R: /root/aula3/index.html
+
+04 - Onde está executado o servidor HTTP ?
+R:  localhost:8080
+
+05 - Seu computador precisou instalar um servidor web ?
+R: Não
